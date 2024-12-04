@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+            #content {
+                padding-bottom: 150px;
+            }
+        </style>
+    </head>
+    <body id = "content"> 
+        <h1 class="my-2" style="text-align: center;">Text to Speech Converter</h1>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <table class="table table-hover shadow">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Licence</th>
+                                <th scope="col">isActive</th>
+                                <th scope="col">Created At</th>
+                                <th scope="col">Speech</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @for(driver of drivers; track $index) {
+                                    <tr>
+                                        <td scope="row">{{driver.driver_id}}</td>
+                                        <td>{{driver.driver_name|uppercaseConverter}}</td>
+                                        <td>{{driver.driver_department}}</td>
+                                        <td>{{driver.driver_licence}}</td>
+                                        <td>{{driver.driver_isActive}}</td>
+                                        <td>{{driver.driver_createdAt}}</td>
+                                        <button class="btn btn-success"(click)="textToSpeech(driver.driver_licence)">S</button>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div>
+                            <p>Text to Convert</p>
+                            <h6>{{licence}}</h6>
+                        </div>
+                        @if(file) {
+                            <p>Converted Speech</p>
+                            <audio controls id="audioPlayer">
+                                <source [src]="file" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

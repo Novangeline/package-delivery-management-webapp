@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <style>
+            #content {
+                padding-bottom: 150px;
+            }
+        </style>
+    </head>
+    <body id="content">
+        <h1 class="my-2" style="text-align: center;">UPDATE PACKAGE</h1>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class = "mb-3">
+                                    <label>Package ID</label>
+                                    <input type="text" name="licence" class="form-control" placeholder="Package ID to update" [(ngModel)]="package._id" required/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Destination</label>
+                                    <input type="text" name="licence" class="form-control" placeholder="New Destination" [(ngModel)]="package.package_destination" required/>
+                                </div>
+                                <button class="btn btn-primary" (click)="updatePackage()">Update Package</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

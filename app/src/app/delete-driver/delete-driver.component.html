@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+			#content {
+				padding-bottom: 150px;
+    		}
+		</style>
+    </head>
+    <body id = "content"> 
+        <h1 class="my-2" style="text-align: center;">DRIVERS INFORMATION</h1>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <table class="table table-hover shadow">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Licence</th>
+                                <th scope="col">isActive</th>
+                                <th scope="col">Created At</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @for(driver of drivers; track $index) {
+                                    <tr>
+                                        <td scope="row">{{driver.driver_id}}</td>
+                                        <td>{{driver.driver_name|uppercaseConverter}}</td>
+                                        <td>{{driver.driver_department}}</td>
+                                        <td>{{driver.driver_licence}}</td>
+                                        <td>{{driver.driver_isActive}}</td>
+                                        <td>{{driver.driver_createdAt}}</td>
+                                        <button class="btn btn-danger" (click)="deleteDriver(driver._id)">Delete</button>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

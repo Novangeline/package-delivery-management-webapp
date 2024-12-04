@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            #content {
+                padding-bottom: 150px;
+            }
+        </style>
+    </head>
+    <body id="content">
+        <h1 class="my-2" style="text-align: center;">ADD NEW PACKAGE</h1>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class = "mb-3">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control" placeholder="Add Package Title" [(ngModel)]="package.package_title" required/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Weight</label>
+                                    <input type="number" name="weight" class="form-control" placeholder="Add Package Weight" [(ngModel)]="package.package_weight" required/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Destination</label>
+                                    <input type="text" name="destination" class="form-control" placeholder="Add Package Destination" [(ngModel)]="package.package_destination" required/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Description</label>
+                                    <input type="text" name="description" class="form-control" placeholder="Add Package Description" [(ngModel)]="package.description"/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Is it allocated?</label>
+                                    <input type="checkbox" name="isAllocated" [(ngModel)]="package.isAllocated" />
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Driver ID</label>
+                                    <select name = "driverId" class="form-control" [(ngModel)]="package.driver_id" required>
+                                        <option value="" disabled selected>Select driver ID</option>
+                                        @for(driver of drivers; track $index) {
+                                            <option [value]="driver._id">{{driver.driver_name}}</option>
+                                        }             
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" (click)="addPackage()">Add Package</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

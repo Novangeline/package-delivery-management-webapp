@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+            #content {
+                padding-bottom: 150px;
+            }
+        </style>
+    </head>
+    <body id="content">
+        <h1 class="my-2" style="text-align: center;">ADD NEW DRIVER</h1>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 g-3 justify-content-center">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class = "mb-3">
+                                    <label>Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Add Driver's Name" [(ngModel)]="driver.driver_name" required/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Department</label>
+                                    <select class="form-control" [(ngModel)]="driver.driver_department" required>
+                                        <option value="" disabled selected>Select Department</option>
+                                        @for(department of departments;track $index){
+                                            <option [value]="department">{{department}}</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Licence</label>
+                                    <input type="text" name="licence" class="form-control" placeholder="Add Driver's Licence" [(ngModel)]="driver.driver_licence" required/>
+                                </div>
+                                <div class = "mb-3">
+                                    <label>Is driver active?</label>
+                                    <input type="checkbox" name="isActive" [(ngModel)]="driver.driver_isActive"/>
+                                </div>
+                                <button class="btn btn-primary" (click)="addDriver()">Add Driver</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

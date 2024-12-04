@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            #content {
+                padding-bottom: 150px;
+            }
+        </style>
+    </head>
+    <body id = "content">
+        <h1 class="my-2" style="text-align: center;">PACKAGES INFORMATION</h1>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <table class="table table-hover shadow">
+                            <thead>
+                              <tr>
+                                <th scope="col">Package ID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Created At</th>
+                                <th scope="col">Is it Allocated?</th>
+                                <th scope="col">Driver ID</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @for(package of packages; track $index) {
+                                    <tr>
+                                        <td>{{package.package_id}}</td>
+                                        <td>{{package.package_title}}</td>
+                                        <td>{{package.package_weight|kgToGConverter}}</td>
+                                        <td>{{package.package_destination}}</td>
+                                        <td>{{package.description}}</td>
+                                        <td>{{package.createdAt}}</td>
+                                        <td>{{package.isAllocated}}</td>
+                                        <td>{{package.driver_id}}</td>
+                                        <button class="btn btn-danger" (click)="deletePackage(package._id)">Delete</button>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

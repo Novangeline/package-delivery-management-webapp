@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            #content {
+                padding-bottom: 150px;
+            }
+        </style>
+    </head>
+    <body id = "content">
+        <h3 class="my-2" style="text-align: center;" >Drivers: {{drivers}}</h3>
+        <h3 class="my-2" style="text-align: center;"> Packages: {{packages}}</h3>
+        <div class="album py-5">
+            <div class="container w-25 rounded shadow">
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">Operation</th>
+                                <th scope="col">Count</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @for(operation of operations; track $index; let i=$index) {
+                                    <tr>
+                                        <td scope="row">{{operation}}</td>
+                                        <td scope="row">{{counts[i]}}</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

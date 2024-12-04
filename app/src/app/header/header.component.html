@@ -1,0 +1,66 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<style>
+			.body {
+				height: 230px;
+			}
+		</style>
+	</head>
+	<header>
+		<img src="./package.jpg" width="7.5%" height="15%" class="d-block mx-auto" />
+	</header>
+	<body>
+        <nav class="navbar navbar-expand-sm text-light" style="background-color: #05a3ca;">
+            <div class="container-fluid">
+              <a class="navbar-brand text-light" routerLink="/">NS</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Driver Actions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="/add-driver">Add Driver</a></li>
+                      <li><a class="dropdown-item" routerLink="/list-drivers">List Drivers</a></li>
+                      <li><a class="dropdown-item" routerLink="/delete-driver">Delete Driver</a></li>
+                      <li><a class="dropdown-item" routerLink="/update-driver">Update Driver</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Package Actions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="/add-package">Add Package</a></li>
+                      <li><a class="dropdown-item" routerLink="/list-packages">List Packages</a></li>
+                      <li><a class="dropdown-item" routerLink="/delete-package">Delete Package</a></li>
+                      <li><a class="dropdown-item" routerLink="/update-package">Update Package</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cloud Services Actions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="/translate">Translate</a></li>
+                      <li><a class="dropdown-item" routerLink="/text-to-speech">Text 2 Speech</a></li>
+                      <li><a class="dropdown-item" routerLink="/generative-ai">Generative AI</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link text-light" data-bs-toggle="tab" routerLink="/statistics">Statistics</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link text-light" data-bs-toggle="tab" routerLink="/login">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+	</body>
+</html>
