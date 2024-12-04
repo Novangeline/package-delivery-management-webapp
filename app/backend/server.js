@@ -122,7 +122,7 @@ const url = "mongodb://localhost:27017/app";
  * gemini api key
  * @const
  */
-const gemini_api_key = "AIzaSyCZCw1PmlyQ5AFM-HNJ1mU0cKRESUseXY0";
+const gemini_api_key = "secret-key";
 
 /**
  * Middleware to serve static file
